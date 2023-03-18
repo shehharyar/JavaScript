@@ -30,21 +30,42 @@ class HashTable{
     get (key){
         let address = this._hash(key)
         const currentBucket= this.data[address];
-        console.log(currentBucket);
-    }
+        if(currentBucket){
+            for(let i = 0; i < currentBucket.length; i++){
+                if(currentBucket[i][0]== key){
+                    console.log(currentBucket[i][0])
+                    return currentBucket[i];
+                }
+            }
+        }
 
+        // console.log(currentBucket);
+        return undefined;
+    }
+    keys(){
+        const keysArray= [];
+        for (let i = 0; i < this.data.length; i++){
+            if(this.data[i]){
+                    // console.log(this.data[i][0])
+                keysArray.push(this.data[i][0])
+            }
+        for (var key in keysArray){
+            // console.log(keysArray[key])
+            return keysArray[key];
+        }
+        }
+    }
 
 }
 
-const myHashTable= new HashTable(50);
-// var hash= myHashTable.getHash();
+const myHashTable= new HashTable(500);
 
-// console.log(hash)
-myHashTable.set('apples', 100);myHashTable.set('bananas', 54);myHashTable.set('apples', 67);
-let hashedData=myHashTable.set('grapes', 10000);
+myHashTable.set('apples', 100);
+myHashTable.set('bananas', 54);
+myHashTable.set('apples', 67);
+myHashTable.set('grapes', 10000);
 myHashTable.get('apples');
-
-// console.log(hashedData)
+console.log(myHashTable.keys())
 
 // var gethash=myHashTable.get('grapes');
 // console.log(myHashTable)
