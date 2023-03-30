@@ -1,0 +1,54 @@
+input {
+  padding: 0.5rem;
+}
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  background-color: rgb(255, 255, 255);
+  /* justify-content: center; */
+  /* align-items: center; */
+  column-gap: 1rem;
+  border: 2px solid whitesmoke;
+  box-shadow: 1px 1px 1px 1px rgb(150, 150, 150) ;
+  border-radius: 5px;
+}
+.form-control{
+  padding: 0.5rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ width: 50%;
+}
+
+.form-control input {
+  margin-top: 0.2rem;
+  border-radius: 0.4rem;
+  padding: 0.7rem 0;
+}
+
+.form-actions{
+  text-align: right;
+}
+.invalid input
+{
+
+  border-color: brown;
+  background-color: rgb(243, 117, 142);
+}
+
+button{
+  background-color: rgb(51, 12, 88);
+  padding: 0.7rem 1.5rem;
+  color: beige;
+  border-color: rgb(51, 12, 88);
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+
+}
+main{
+  margin: 1rem 12rem;
+}
+.error-text{
+  color: red;
+}
